@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: userservice
+spec:
+  #replicas: 3  
+  selector:
+    matchLabels:
+      app: userservice
+  template:
+    metadata:
+      labels:
+        app: userservice
+    spec:
+      containers:
+      - name: userservice
+        image: dmytro314159/userservice:latest
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8081
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: userservice
+spec: 
+  type: NodePort
+  selector:
+    app: userservice  
+  ports:
+  - port: 8081  
+    targetPort: 8081
+    nodePort: 30002

@@ -1,0 +1,39 @@
+#openapi: 3.0.0
+#info:
+#  title: UserService API
+#  description: UserService Documentation by using Swagger
+#  version: 1.0.0
+#  contact:
+#    name: Dmytro Trofimov
+#    email: dima6836753@gmail.com
+#  license:
+#    name: Apache 2.0
+#    url: http://springdoc.org
+#servers:
+#  - url: http://localhost:8081
+#    description: Локальний сервер
+#  - url: https://api.certTrack-users.com
+#    description: Продакшн сервер
+#components:
+#  securitySchemes:
+#    basicScheme:
+#      type: http
+#      scheme: basic
+#    bearerAuth:
+#      type: http
+#      scheme: bearer
+#      bearerFormat: JWT
+#paths:
+#  /users/:
+#    get:
+#      summary: Привітальне повідомлення
+#      security:
+#        - basicScheme: []
+#      responses:
+#        '200':
+#          description: Успішна відповідь
+#          content:
+#            application/json:
+#              schema:
+#                type: string
+#                example: USER SERVICE
