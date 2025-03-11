@@ -36,7 +36,6 @@ public class UserController {
 	public ResponseEntity<ResponseMessage> register(@RequestParam String name, 
 			@RequestParam String email,
 			@RequestParam String password) {
-		System.out.println("zajshov");
 		String message = userService.saveUser(name, email, password);
 		return ResponseEntity.ok(new ResponseMessage(message));	
 	}

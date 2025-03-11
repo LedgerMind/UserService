@@ -39,9 +39,9 @@ public class SecurityConfig {
 			.authorizeHttpRequests(
 					(registry) -> registry
 						.requestMatchers("/api/users/").permitAll()				        
-				        .requestMatchers("/api/auth/login").permitAll()
+				        .requestMatchers("/api/users/auth/login").permitAll()
 						.requestMatchers("/api/users/register").permitAll()
-						.requestMatchers("/api/admin/**").hasRole("ADMIN")
+						.requestMatchers("/api/users/admin/**").hasRole("ADMIN")
 						//.requestMatchers("/swagger-ui.html").permitAll()
 						.requestMatchers("/swagger-ui/**").permitAll()
 						.requestMatchers("/v3/api-docs/**").permitAll()
