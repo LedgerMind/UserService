@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.certTrack</groupId>
-	<artifactId>UserService</artifactId>
+	<artifactId>LedgerMind</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>User-Service</name>
+	<name>LedgerMind</name>
 	<description>Demo project for Spring Boot</description>
 	<url />
 	<licenses>

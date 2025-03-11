@@ -1,5 +1,8 @@
 package com.LedgerMind.UserService.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,8 +32,17 @@ public class UserService {
 		if(userRepository.findByEmail(email).isPresent()) {
 			return "This user is already present!";
 		}
-		userRepository
-				.save(User.builder().name(name).email(email).password(passwordEncoder.encode(password)).role("ROLE_USER").build());
+		userRepository.save(
+				User.builder()
+					.name(name)
+					.email(email)
+					.password(passwordEncoder.encode(password))
+					.currency("USD")
+					.balance(0)
+					.emailVerified(false)
+					.createdAt(LocalDateTime.now())
+					.role("ROLE_USER")
+					.build());
 		return "user successfully registered";
 	}
 

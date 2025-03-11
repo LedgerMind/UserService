@@ -38,10 +38,10 @@ public class SecurityConfig {
 			.securityMatcher("/**")
 			.authorizeHttpRequests(
 					(registry) -> registry
-						.requestMatchers("/users/").permitAll()				        
-				        .requestMatchers("/auth/login").permitAll()
-						.requestMatchers("/users/register").permitAll()
-						.requestMatchers("/admin/**").hasRole("ADMIN")
+						.requestMatchers("/api/users/").permitAll()				        
+				        .requestMatchers("/api/auth/login").permitAll()
+						.requestMatchers("/api/users/register").permitAll()
+						.requestMatchers("/api/admin/**").hasRole("ADMIN")
 						//.requestMatchers("/swagger-ui.html").permitAll()
 						.requestMatchers("/swagger-ui/**").permitAll()
 						.requestMatchers("/v3/api-docs/**").permitAll()
